@@ -17,6 +17,8 @@ func main() {
 	// // println(addExpr(3, 2))
 	println(double(3, 2, mathExpression(SubtractExpr)))
 }
+
+//returning function from a function
 func mathExpression(expr MathExpr) func(float64, float64) float64 {
 	switch expr {
 	case AddExpr:
@@ -34,6 +36,7 @@ func mathExpression(expr MathExpr) func(float64, float64) float64 {
 	}
 }
 
-func double(x float64, y float64, mathExpr func(float64, float64) float64) float64 {
-	return 2 * mathExpr(x, y)
+//passing function as a parameter
+func double(x float64, y float64, mxpr func(float64, float64) float64) float64 {
+	return 2 * mxpr(x, y)
 }
