@@ -12,8 +12,10 @@ const (
 )
 
 func main() {
-	addExpr := mathExpression(AddExpr)
-	println(addExpr(3, 2))
+	// addExpr := mathExpression(AddExpr)
+	// // println(AddExpr)
+	// // println(addExpr(3, 2))
+	println(double(3, 2, mathExpression(SubtractExpr)))
 }
 func mathExpression(expr MathExpr) func(float64, float64) float64 {
 	switch expr {
@@ -30,4 +32,8 @@ func mathExpression(expr MathExpr) func(float64, float64) float64 {
 			return 0
 		}
 	}
+}
+
+func double(x float64, y float64, mathExpr func(float64, float64) float64) float64 {
+	return 2 * mathExpr(x, y)
 }
