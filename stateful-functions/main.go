@@ -18,4 +18,4 @@ func powerOfTwo() func() int64 {
 		x += 1
 		return int64(math.Pow(x, 2))
 	}
-}
+} 
